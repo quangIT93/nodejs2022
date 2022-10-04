@@ -24,7 +24,7 @@
     "netlify-lambda": "^2.0.15",
     "node": "16.17",
     "node-sass": "^7.0.3",
-    "nodemon": "^2.0.20",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "nodemon": "^2.0.20"
   }
 }

@@ -1,7 +1,7 @@
 const express = require("express");
 
 const route = express.Router();
-const managerController = require("../controllers/ManagerController");
+const managerController = require("../Controllers/ManagerController");
 
 route.get("/", managerController.packageFilter);
 route.get("/suppliesFilter", managerController.suppliesFilter);
