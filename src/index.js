@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 const app = express();
 // const route = require("./routes/index");
-const route = require("./routes");
+const route = require("./routes/index.js");
 
 // HTTP request logger middleware for node.js
 const morgan = require("morgan");
