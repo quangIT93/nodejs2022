@@ -5,9 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/netlify-lambda serve src",
-    "build": "./node_modules/.bin/netlify-lambda build src",
-    "watch": "node-sass --watch src/public/scss/style.scss src/public/css/style.css"
+    "start": "nodemon --inspect src/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,11 +22,9 @@
     "mongoose": "^6.6.2",
     "morgan": "^1.10.0",
     "netlify-lambda": "^2.0.15",
-    "node": "16.15",
+    "node": "16.17",
     "node-sass": "^7.0.3",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {
+    "path": "^0.12.7",
     "nodemon": "^2.0.20"
   }
 }
