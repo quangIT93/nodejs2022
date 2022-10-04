@@ -1,0 +1,94 @@
+#footer {
+    .footer-navigation {
+      display: flex;
+      background-color: #ccc;
+      // justify-content: space-around;
+      .footer-info__title {
+          margin: 12px;
+          // background-color: blanchedalmond;
+          // transition: 0.3s linear;
+  
+          h3 {
+              text-align: center;
+              padding-top: 1rem;
+          }
+          ul {
+              padding: 2rem 0;
+  
+              li {
+                  transition: 0.5s linear;
+                  padding: 1rem;
+                  // &:hover {
+                  //     color: $white;
+                  //     background-color: red;
+                  //     cursor: pointer;
+                  //     margin-left: 20px;
+                  //     border-radius: 12px 0 0 12px;
+                  // }
+                  a {
+                      color: black;
+                  }
+              }
+          }
+      }
+      .info, .product {
+          flex: 1;
+          border-right: 1px solid black;
+          li {
+              &:hover {
+                          color: white;
+                          background-color: red;
+                          cursor: pointer;
+                          margin-left: 1rem;
+                          border-radius: 12px 0 0 12px;
+                      }
+  
+  
+          }
+      }
+  
+  
+      .link { 
+          flex: 2;
+          ul {
+              display: flex;
+              justify-content: center ;
+              position: relative;
+              li {
+                  font-size: 2rem;
+                  margin: 0 1rem;
+                  padding: 0.5rem 1rem;
+                  &:hover {
+                      color: white;
+                      background-color: red;
+                      cursor: pointer;
+                      // margin-left: 20px;
+                      border-radius: 12px;
+                      // color: rgb(27, 96, 152);
+                      // color: rgb(12,135,239);
+                      color: white;
+                  }
+              }
+          }
+      }
+    }
+  
+    @include respond(mobile) {
+        .footer-navigation {
+          padding-bottom: 24px;
+          flex-direction: column;
+          .footer-info__title {
+  
+          }
+  
+          .info, .product {
+              border: none;
+          }
+  
+          .link {
+  
+          }
+      }
+    }
+  }
+  

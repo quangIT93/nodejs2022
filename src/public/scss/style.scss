@@ -1,0 +1,38 @@
+@import "reset";
+$mobi-tab: 740px;
+$PCLow: 1024px;
+$PCMiddle: 1113px;
+$PCMedium: 1344px;
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == mobile) {
+    @media (max-width: #{$mobi-tab - 1px}) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tab) {
+    @media (min-width: #{$mobi-tab}) and (max-width: #{$PCLow - 1px}) {
+      @content;
+    }
+  }
+  @if ($breakpoint == pc) {
+    @media (max-width: 1112px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == pcLow) {
+    @media (min-width: #{$PCLow}) and (max-width: #{$PCMiddle - 1px}) {
+      @content;
+    }
+  }
+  @if ($breakpoint == pcMedium) {
+    @media (max-width: #{$PCMedium}) {
+      @content;
+    }
+  }
+}
+@import "./patient.scss";
+@import "./partials/header.scss";
+@import "./partials/footer.scss";
+@import "./slider.scss";
+@import "./admin.scss";

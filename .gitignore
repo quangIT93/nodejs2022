@@ -1,0 +1,8 @@
+/node_modules
+
+.vscode
+
+/node_modules/src/public/scss
+
+
+.prettierrc

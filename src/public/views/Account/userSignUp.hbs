@@ -1,0 +1,60 @@
+<div class="signUp">
+  <h1>Resister</h1>
+  <form id="form" action="/signUp" method="POST">
+    <div class="form-control">
+      <input id="userName" type="text" placeholder="UserName" name="userName" />
+      {{#if checkUser}}
+        <span class="active"></span>
+        <small>{{this.warnningUserName}}</small>
+      {{else}}
+        <span></span>
+        <small></small>
+      {{/if}}
+    </div>
+    <div class="form-control">
+      <input id="email" type="email" placeholder="Email" name="email" />
+      {{#if checkEmail}}
+        <span class="active"></span>
+        <small>{{this.warnningEmail}}</small>
+      {{else}}
+        <span></span>
+        <small></small>
+      {{/if}}
+    </div>
+    <div class="form-control">
+      <input
+        id="passWord"
+        type="password"
+        placeholder="Password"
+        name="passWord"
+      />
+      {{#if checkPass}}
+        <span class="active"></span>
+        <small>{{this.warnningPassWord}}</small>
+      {{else}}
+        <span></span>
+        <small></small>
+      {{/if}}
+    </div>
+    <div class="form-control">
+      <input
+        id="confirmPw"
+        type="password"
+        placeholder="Confirm Password"
+        name="confirmPw"
+      />
+      {{#if checkConfirmPw}}
+        <span class="active"></span>
+        <small>{{this.warnningConfirmPw}}</small>
+      {{else}}
+        <span></span>
+        <small></small>
+      {{/if}}
+    </div>
+    <button type="submit" class="btn-submit">Submit form</button>
+    <div class="signup-link">
+      Not a member?
+      <a href="./signInPage">Sign In!</a>
+    </div>
+  </form>
+</div>

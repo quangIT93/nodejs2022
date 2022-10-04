@@ -1,0 +1,172 @@
+<div class="adminManager">
+  <div class="manager-bar">
+    <h1>Danh sách mục quản lý</h1>
+    <ul>
+      <li>
+        <a href="/admin/managerUser?id={{user._id}}">Quản lý người dùng</a>
+      </li>
+      <li>
+        <a href="/admin/managerCourse?id={{user._id}}">Quản lý khoá học</a>
+      </li>
+    </ul>
+  </div>
+  <div class="manager-content">
+    <h1>Danh sách khoá học</h1>
+    <div class="managerTable">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Tên khoá học</th>
+            <th scope="col">Giảng viên</th>
+            <th scope="col">Số lượng khoá học</th>
+            <th scope="col" colspan="1">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each course}}
+          <tr>
+            <td>{{sum @index 1}}</td>
+            <td>{{this.courseName}}</td>
+            <td>{{this.lecturer}}</td>
+            <td>{{this.numberVideo}}</td>
+            <td>{{this.price}}</td>
+            <td>
+              <span class="deleteItem" data-id="{{this._id}}"> Xoá </span>
+              <span class="update" data-id="{{this._id}}"> Sửa</span>
+            </td>
+          </tr>
+          {{/each}}
+          <tr>
+            <td colspan="5" class="addItem">
+              <span >Add</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+        <div class="wrapAdd">
+          <div class="addCourse">
+            <div class="closeAdd">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h1>Thêm khoá học mặc định mới</h1>
+            <ul>
+              <li class="add">Thêm</li>
+              <li class="cancleAdd">Huỷ</li>
+            </ul>
+          </div>
+        </div>
+      <form method="POST" name="deleteForm"></form>
+        <form method="GET" name="addForm"></form>
+    </div>
+    <div class="editInfo">
+      <div class="editBox">`
+        <div class="closeEdit">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h1>Chỉnh sửa thông tin khoá học</h1>
+        <div class="editItem">
+          <form method="POST" name="updateForm">
+            <div class="form-group">
+              <label for="courseName">Tên khoá học:</label>
+              <input type="text" id="courseName" class="courseName" name="courseName" />
+            </div>
+            <div class="form-group">
+              <label for="lecturer">Giảng viên:</label>
+              <input type="text" id="lecturer" class="lecturer" name="lecturer" />
+            </div>
+            <div class="form-group">
+              <label for="image">Image:</label>
+              <input type="text" id="image" class="image" name="image" />
+            </div>
+            <div class="form-group">
+              <label for="quantity">Số lượng khoá học:</label>
+                <input type="number" class="quatity" id="quantity" name="numberVideo" min="1" max="100" value="1">
+            </div>
+            <div class="form-group">
+              <label for="price">Giá:</label>
+              <input type="number" id="price" class="price" name="price" min="0" max="100000000" value="0"/>
+            </div>
+            <div class="btnEdit">
+              <button type="submit" class="accept">Sửa</button>
+              <button type="button" class="cancle">Huỷ</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tbodyName = document.querySelector(
+      ".manager-content .managerTable tbody"
+    );
+
+    const editInfo = document.querySelector(".manager-content .editInfo");
+
+    const deleteForm = document.forms["deleteForm"];
+    const btnUpdate = document.querySelector('span.update')
+    const updateForm = document.forms['updateForm']
+
+    const addForm = document.forms['addForm']
+    const wrapAdd = document.querySelector('.managerTable .wrapAdd')
+    const addItem = document.querySelector(".manager-content .addItem")
+    console.log(tbodyName);
+    console.log(deleteForm);
+    let updateID;
+    tbodyName.addEventListener("click", function (e) {
+      const btnDelete = e.target.closest("span.deleteItem");
+      if (btnDelete) {
+        deleteForm.action =
+          "/admin/deteleCourse/" + btnDelete.dataset.id + "?_method=DELETE";
+        deleteForm.submit();
+      }
+
+      if (e.target.closest("span.update")) {
+        console.log('update')
+        console.log(updateForm)
+        updateID = e.target.closest("span.update").dataset.id;
+        updateForm.action = `/admin/updateCourse/${updateID}/`;
+        editInfo.style.display = "block";
+      }
+    });
+
+    editInfo.addEventListener("click", function (e) {
+      if (
+        e.target.closest(".btnEdit .cancle") ||
+        e.target.closest(".editBox .closeEdit")
+      ) {
+        console.log("huỷ");
+        console.log(e.target.closest('.quatity'));
+        editInfo.style.display = "none";
+      }
+    });
+
+
+        wrapAdd.addEventListener('click', function(e) {
+      if(e.target.closest(".add")){
+        wrapAdd.style.display = "none"
+        console.log(addForm)
+        addForm.action = `/admin/addCourse/icungdc/`
+        addForm.submit()
+      }
+
+      if(e.target.closest(".cancleAdd")){
+        wrapAdd.style.display = "none"
+
+        
+      }
+
+      if(e.target.closest(".closeAdd")){
+        wrapAdd.style.display = "none"
+
+        
+      }
+    })
+
+    addItem.addEventListener("click", function(e) {
+      wrapAdd.style.display = "block"
+    })
+  });
+</script>

@@ -1,0 +1,203 @@
+#header {
+  width: 100%;
+  position: fixed;
+  height: 4rem;
+  // background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+
+    background-color: rgba(35, 100, 100, 0.5);
+  
+  .logo {
+    margin-left: 2rem;
+    a {
+      border-radius: 12px;
+      opacity: 0.8;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      height: 4rem;
+      width: 6rem;
+      vertical-align: middle;
+      background-size: 6em 4em;
+      line-height: 4rem;
+      margin: auto 0;
+      display: inline-block;
+      background-image: url("https://static.topcv.vn/company_logos/AlvCqL2zVDRbgQnGZSMPgcTVvpgdvCWB_1642388532____e114c7bd2e7ba44758b2a88da4a2bfa7.jpg");
+      //   background-position: 0px 6px;
+    }
+    // height: 2.1em;
+    // width: 10em;
+  }
+
+  .nav {
+    ul {
+      li {
+        display: inline-block;
+        transition: 0.3s linear;
+        position: relative;
+        a {
+          color: white;
+          line-height: 4rem;
+          font-size: 1.2rem;
+          font-weight: 700;
+          padding: 0 2rem;
+          transition: 0.3s linear;
+        }
+        &:hover {
+          a {
+            color: red;
+          }
+          &::before {
+            transition: 0.3s linear;
+            width: 100%;
+          }
+        }
+        &:before {
+          position: absolute;
+          top: 4rem;
+          content: "";
+          width: 0;
+          height: 2px;
+          background-color: aqua;
+        }
+      }
+    }
+  }
+
+  .search {
+    position: relative;
+    margin-right: 2rem;
+    display: flex;
+
+    input {
+      right: 11rem;
+      top: 1.2rem;
+      position: absolute;
+      padding: 4px 1rem;
+      width: 0px;
+      outline: none;
+      border: none;
+      opacity: 0;
+      border-radius: 4px;
+      transition: 0.3s linear;
+    }
+
+    .searchBtn {
+      position: relative;
+      display: inline-block;
+      outline: none;
+      border: none;
+      line-height: 4rem;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0rem rem;
+        right: 4rem;
+        height: 4rem;
+        width: 2rem;
+      }
+      a {
+        // height: 3rem;
+        // background-color: red;
+        padding: 4px 8px;
+        color: white;
+        line-height: 4rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        transition: 0.3s linear;
+        &::before {
+          transition: 0.3s linear;
+          position: absolute;
+          content: "";
+          background-color: aqua;
+          top: 4rem;
+          width: 0;
+          height: 2px;
+        }
+      }
+      &:hover {
+        a {
+          color: red;
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+    &:hover {
+      input {
+        display: inline-block;
+        width: 200px;
+        opacity: 1;
+      }
+    }
+    .infoUser {
+      display: inline-block;
+
+      margin-left: 2rem;
+      line-height: 4rem;
+      position: relative;
+      img {
+        margin-top: 4px;
+        background-size: cover;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+      }
+
+      .infoUser-detail {
+        position: absolute;
+        background-color: black;
+        width: 200px;
+        right: 0;
+        border-radius: 12px;
+        margin-top: 0.8rem;
+        // text-align: center;
+        transform: translateX(120%);
+        opacity: 0;
+        transition: 0.3s linear;
+        ul {
+          padding: 0 1rem;
+          li {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 3rem;
+            span {
+              font-size: 1rem;
+              font-weight: 500;
+              font-style: italic;
+            }
+          }
+        }
+        .logout,
+        .login {
+          text-align: center;
+          a {
+            cursor: pointer;
+            background-color: #fff;
+            color: black;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 4px 12px;
+            display: inline;
+            border-radius: 12px;
+            box-shadow: 3px 5px 5px rgb(108, 68, 68);
+            transition: 0.3s linear;
+            &:hover {
+              background-color: red;
+              color: black;
+              font-weight: 800;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+      .infoUser-detail.show {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+    }
+  }
+}

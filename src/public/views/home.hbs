@@ -1,0 +1,120 @@
+<div class="slider">
+  <div class="slider-title">
+    <h1>Chào mừng bạn đến với website của chúng tôi</h1>
+    <div class="loginPage">
+      Nếu bạn có tài khoản hay đăng nhập tại:
+      <a href="./signInPage">Trang đăng nhập</a>
+      {{!-- <a href="#">Trang đăng nhập</a> --}}
+
+    </div>
+    <div class="RegisterPage">
+      Nếu chưa có tài khoản! Vui lòng đăng ký để vào trang web tại:
+      <a href="./signUpPage">Trang đăng ký</a>
+    </div>
+    <div class="admin">
+      TRANG QUẢN TRỊ VIÊN:<br />
+      <a href="./admin-SignIn-Page" class="adminPage">QUẢN TRỊ VIÊN</a>
+      <p>I'm <span class="text" style="color: red"></span></p>
+    </div>
+  </div>
+          <div class="wrapHome">
+          <div class="checkToken">
+            <div class="closeCheck">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h1>Bạn đang đăng nhập</h1>
+            <h3>Vui lòng thoát tài khoản của bạn</h3>
+            <ul>
+              <li class="LogOut"><a href="/logOut">Log out</a></li>
+              <li class="cancleAdd">Huỷ</li>
+            </ul>
+          </div>
+        </div>
+</div>
+
+<form action="POST" name="formLogOut"></form>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"
+  integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg=="
+  crossorigin="anonymous"
+></script>
+<script>
+  var typing = new Typed(".slider .slider-title .admin .text ", { strings: [ "",
+  "Lập Trình Viên", "Front end", "Web Designer", "Web Developer", ], typeSpeed:
+  100, backSpeed: 40, loop: true, });
+
+  const wrapHome = document.querySelector(".slider .wrapHome")
+  const loginPage = document.querySelector(".slider .loginPage")
+  const registerPage = document.querySelector(".slider .registerPage")
+  const adminPage = document.querySelector(".slider .adminPage")
+
+
+  console.log(wrapHome)
+
+
+
+
+  let cookies = document.cookie.split(';');
+  let token
+  cookies.forEach((value, key) => {
+    console.log(value.split('=')[0].trim() == "token")
+    console.log(value.split('=')[0].trim())
+    if(value.split('=')[0].trim() == "token")
+      token = value.split('=')[1]
+  })
+
+  console.log(token)
+  console.log(cookies)
+
+  if(token){
+    
+  loginPage.addEventListener('click', function(e){
+    e.preventDefault()  
+    if(e.defaultPrevented === true){
+      wrapHome.style.display = "block"
+
+    }
+  })
+
+  registerPage.addEventListener('click', function(e){
+    e.preventDefault()
+    if(e.defaultPrevented === true){
+      wrapHome.style.display = "block"
+
+    }
+  })
+
+  adminPage.addEventListener('click', function(e){
+    e.preventDefault()
+    if(e.defaultPrevented === true){
+      wrapHome.style.display = "block"
+
+    }
+  })
+
+
+  wrapHome.addEventListener("click", function(e){
+    
+    if(e.target.closest('.closeCheck')){
+      wrapHome.style.display = "none"
+    }
+
+    if(e.target.closest('.LogOut')){
+      wrapHome.style.display = "none"
+      
+    }
+
+    if(e.target.closest('.cancleAdd')){
+      wrapHome.style.display = "none"
+      
+    }
+  })
+
+
+  }
+
+
+
+
+
+</script>

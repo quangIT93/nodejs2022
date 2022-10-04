@@ -1,0 +1,37 @@
+<div class="SignIn">
+  <h1>
+    Admin login
+  </h1>
+  <form action="/admin-SignIn" id="form" method="POST">
+    <div class="form-control">
+      <input id="userName" type="text" placeholder="userName" name="userName" />
+      {{#if checkUser}}
+        <span class="active"></span>
+        <small>{{this.warnningUserName}}</small>
+      {{else}}
+        <span></span>
+        <small></small>
+      {{/if}}
+    </div>
+    <div class="form-control">
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        name="passWord"
+      />
+      {{#if checkPass}}
+        <span class="active"></span>
+        <small>{{this.warnningPassWord}}</small>
+      {{else}}
+        <span></span>
+        <small></small>
+      {{/if}}
+    </div>
+    <button type="submit" class="btn-submit">Submit form</button>
+    <div class="signup-link">
+      This page is for administrators only.
+      <a href="./signUpPage">Sign Up!</a>
+    </div>
+  </form>
+</div>

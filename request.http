@@ -1,0 +1,32 @@
+GET http://localhost:3000/
+
+###
+
+GET http://localhost:3000/signUpPage
+
+###
+
+GET http://localhost:3000/signInPage
+
+###
+
+POST  http://localhost:3000/signIn
+Content-Type: application/json
+
+{
+    "userName": "duc",
+    "passWord": "12345"
+}
+
+###
+
+POST  http://localhost:3000/signUp
+Content-Type: application/json
+
+{
+    "userName": "duc",
+    "passWord": "12345"
+}
+
+###
+

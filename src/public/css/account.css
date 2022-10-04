@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 16px; }
+
+body {
+  width: 100%;
+  min-height: 100vh; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style-type: none; }
+
+#header {
+  width: 100%;
+  position: fixed;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  background-color: rgba(35, 100, 100, 0.5); }
+  #header .logo {
+    margin-left: 2rem; }
+    #header .logo a {
+      border-radius: 12px;
+      opacity: 0.8;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      height: 4rem;
+      width: 6rem;
+      vertical-align: middle;
+      background-size: 6em 4em;
+      line-height: 4rem;
+      margin: auto 0;
+      display: inline-block;
+      background-image: url("https://static.topcv.vn/company_logos/AlvCqL2zVDRbgQnGZSMPgcTVvpgdvCWB_1642388532____e114c7bd2e7ba44758b2a88da4a2bfa7.jpg"); }
+  #header .nav ul li {
+    display: inline-block;
+    transition: 0.3s linear;
+    position: relative; }
+    #header .nav ul li a {
+      color: white;
+      line-height: 4rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 0 2rem;
+      transition: 0.3s linear; }
+    #header .nav ul li:hover a {
+      color: red; }
+    #header .nav ul li:hover::before {
+      transition: 0.3s linear;
+      width: 100%; }
+    #header .nav ul li:before {
+      position: absolute;
+      top: 4rem;
+      content: "";
+      width: 0;
+      height: 2px;
+      background-color: aqua; }
+  #header .search {
+    position: relative;
+    margin-right: 2rem;
+    display: flex; }
+    #header .search input {
+      right: 11rem;
+      top: 1.2rem;
+      position: absolute;
+      padding: 4px 1rem;
+      width: 0px;
+      outline: none;
+      border: none;
+      opacity: 0;
+      border-radius: 4px;
+      transition: 0.3s linear; }
+    #header .search .searchBtn {
+      position: relative;
+      display: inline-block;
+      outline: none;
+      border: none;
+      line-height: 4rem; }
+      #header .search .searchBtn:before {
+        content: "";
+        position: absolute;
+        top: 0rem rem;
+        right: 4rem;
+        height: 4rem;
+        width: 2rem; }
+      #header .search .searchBtn a {
+        padding: 4px 8px;
+        color: white;
+        line-height: 4rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        transition: 0.3s linear; }
+        #header .search .searchBtn a::before {
+          transition: 0.3s linear;
+          position: absolute;
+          content: "";
+          background-color: aqua;
+          top: 4rem;
+          width: 0;
+          height: 2px; }
+      #header .search .searchBtn:hover a {
+        color: red; }
+        #header .search .searchBtn:hover a::before {
+          width: 100%; }
+    #header .search:hover input {
+      display: inline-block;
+      width: 200px;
+      opacity: 1; }
+    #header .search .infoUser {
+      display: inline-block;
+      margin-left: 2rem;
+      line-height: 4rem;
+      position: relative; }
+      #header .search .infoUser img {
+        margin-top: 4px;
+        background-size: cover;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%; }
+      #header .search .infoUser .infoUser-detail {
+        position: absolute;
+        background-color: black;
+        width: 200px;
+        right: 0;
+        border-radius: 12px;
+        margin-top: 0.8rem;
+        transform: translateX(120%);
+        opacity: 0;
+        transition: 0.3s linear; }
+        #header .search .infoUser .infoUser-detail ul {
+          padding: 0 1rem; }
+          #header .search .infoUser .infoUser-detail ul li {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 3rem; }
+            #header .search .infoUser .infoUser-detail ul li span {
+              font-size: 1rem;
+              font-weight: 500;
+              font-style: italic; }
+        #header .search .infoUser .infoUser-detail .logout,
+        #header .search .infoUser .infoUser-detail .login {
+          text-align: center; }
+          #header .search .infoUser .infoUser-detail .logout a,
+          #header .search .infoUser .infoUser-detail .login a {
+            cursor: pointer;
+            background-color: #fff;
+            color: black;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 4px 12px;
+            display: inline;
+            border-radius: 12px;
+            box-shadow: 3px 5px 5px #6c4444;
+            transition: 0.3s linear; }
+            #header .search .infoUser .infoUser-detail .logout a:hover,
+            #header .search .infoUser .infoUser-detail .login a:hover {
+              background-color: red;
+              color: black;
+              font-weight: 800;
+              box-shadow: none; }
+      #header .search .infoUser .infoUser-detail.show {
+        transform: translateX(0%);
+        opacity: 1; }
+
+.footer .footer-navigation {
+  display: flex;
+  background-color: #ccc; }
+  .footer .footer-navigation .footer-info__title {
+    margin: 12px; }
+    .footer .footer-navigation .footer-info__title h3 {
+      text-align: center;
+      padding-top: 1rem; }
+    .footer .footer-navigation .footer-info__title ul {
+      padding: 2rem 0; }
+      .footer .footer-navigation .footer-info__title ul li {
+        transition: 0.5s linear;
+        padding: 1rem; }
+        .footer .footer-navigation .footer-info__title ul li a {
+          color: black; }
+  .footer .footer-navigation .info, .footer .footer-navigation .product {
+    flex: 1;
+    border-right: 1px solid black; }
+    .footer .footer-navigation .info li:hover, .footer .footer-navigation .product li:hover {
+      color: white;
+      background-color: red;
+      cursor: pointer;
+      margin-left: 1rem;
+      border-radius: 12px 0 0 12px; }
+  .footer .footer-navigation .link {
+    flex: 2; }
+    .footer .footer-navigation .link ul {
+      display: flex;
+      justify-content: center;
+      position: relative; }
+      .footer .footer-navigation .link ul li {
+        font-size: 2rem;
+        margin: 0 1rem;
+        padding: 0.5rem 1rem; }
+        .footer .footer-navigation .link ul li:hover {
+          color: white;
+          background-color: red;
+          cursor: pointer;
+          border-radius: 12px;
+          color: white; }
+
+@media (max-width: 739px) {
+  .footer .footer-navigation {
+    padding-bottom: 24px;
+    flex-direction: column; }
+    .footer .footer-navigation .info, .footer .footer-navigation .product {
+      border: none; } }
+
+.main {
+  height: 100%;
+  width: 100%; }
+  .main .container {
+    margin: 0 auto;
+    background-color: white;
+    height: 100%;
+    position: relative;
+    background-image: linear-gradient(to right, #003233, #97b496); }
+    .main .container .signUp,
+    .main .container .signIn {
+      width: 500px;
+      background-color: #ccc;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 1rem;
+      box-shadow: -3px 3px 5px; }
+      .main .container .signUp h1,
+      .main .container .signIn h1 {
+        margin: 1.6rem 0;
+        text-align: center;
+        font-size: 2.4rem;
+        color: black; }
+      .main .container .signUp form,
+      .main .container .signIn form {
+        display: flex;
+        flex-direction: column; }
+        .main .container .signUp form .form-control,
+        .main .container .signIn form .form-control {
+          padding: 0 1rem 2rem 1rem;
+          position: relative; }
+          .main .container .signUp form .form-control input,
+          .main .container .signIn form .form-control input {
+            font-size: 1.2rem;
+            padding: 0.7rem 1rem;
+            margin-bottom: 0.4rem;
+            border-radius: 1rem;
+            width: 100%;
+            border: none;
+            outline: none;
+            cursor: pointer; }
+            .main .container .signUp form .form-control input:focus,
+            .main .container .signIn form .form-control input:focus {
+              background-color: #b0b0f1; }
+            .main .container .signUp form .form-control input:focus ~ span,
+            .main .container .signIn form .form-control input:focus ~ span {
+              outline: red; }
+              .main .container .signUp form .form-control input:focus ~ span:before,
+              .main .container .signIn form .form-control input:focus ~ span:before {
+                width: 88%; }
+            .main .container .signUp form .form-control input:focus ~ span.active::before,
+            .main .container .signIn form .form-control input:focus ~ span.active::before {
+              background: #344633; }
+            .main .container .signUp form .form-control input:focus ~ small,
+            .main .container .signIn form .form-control input:focus ~ small {
+              opacity: 0; }
+          .main .container .signUp form .form-control span:before,
+          .main .container .signIn form .form-control span:before {
+            content: "";
+            position: absolute;
+            top: 44px;
+            width: 0;
+            height: 3px;
+            left: 2rem;
+            right: 0;
+            background: #344633;
+            transition: 0.5s; }
+          .main .container .signUp form .form-control span.active:before,
+          .main .container .signIn form .form-control span.active:before {
+            background: red;
+            width: 88%; }
+          .main .container .signUp form .form-control small,
+          .main .container .signIn form .form-control small {
+            color: red;
+            font-size: 0.8rem;
+            padding-left: 1rem; }
+        .main .container .signUp form button,
+        .main .container .signIn form button {
+          background-color: #ccc;
+          color: black;
+          font-size: 1.2rem;
+          font-weight: 700;
+          padding: 8px 16px;
+          border-radius: 12px;
+          margin: 0 auto;
+          border: none;
+          outline: none;
+          box-shadow: -1px 2px 5px #2e0799;
+          transition: 0.5s linear;
+          cursor: pointer; }
+          .main .container .signUp form button:hover,
+          .main .container .signIn form button:hover {
+            background-color: #2e0799;
+            color: white;
+            box-shadow: none; }
+        .main .container .signUp form .signup-link,
+        .main .container .signIn form .signup-link {
+          margin: 2rem auto;
+          height: 30px; }
+          .main .container .signUp form .signup-link a,
+          .main .container .signIn form .signup-link a {
+            position: relative;
+            color: black;
+            font-size: 1.2rem;
+            animation: move 3s infinite;
+            border-radius: 12px;
+            padding: 4px 8px; }
+            .main .container .signUp form .signup-link a:hover,
+            .main .container .signIn form .signup-link a:hover {
+              color: white; }
+
+@keyframes move {
+  0% {
+    background-color: orange; }
+  25% {
+    background-color: #00ff04; }
+  50% {
+    background-color: blue; }
+  75% {
+    background-color: blueviolet; }
+  100% {
+    background-color: red; } }

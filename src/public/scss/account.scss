@@ -1,0 +1,188 @@
+@import "reset";
+$mobi-tab: 740px;
+$PCLow: 1024px;
+$PCMiddle: 1113px;
+$PCMedium: 1344px;
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == mobile) {
+    @media (max-width: #{$mobi-tab - 1px}) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tab) {
+    @media (min-width: #{$mobi-tab}) and (max-width: #{$PCLow - 1px}) {
+      @content;
+    }
+  }
+  @if ($breakpoint == pc) {
+    @media (max-width: 1112px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == pcLow) {
+    @media (min-width: #{$PCLow}) and (max-width: #{$PCMiddle - 1px}) {
+      @content;
+    }
+  }
+  @if ($breakpoint == pcMedium) {
+    @media (max-width: #{$PCMedium}) {
+      @content;
+    }
+  }
+}
+@import "./partials/header.scss";
+@import "./partials/footer.scss";
+.main {
+  height: 100%;
+  width: 100%;
+  .container {
+    margin: 0 auto;
+    // width: 1200px;
+    background-color: white;
+    height: 100%;
+    position: relative;
+    background-image: linear-gradient(
+      to right,
+      rgb(0, 50, 51),
+      rgb(151, 180, 150)
+    );
+    .signUp,
+    .signIn {
+      width: 500px;
+      // height:;
+      background-color: #ccc;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 1rem;
+      box-shadow: -3px 3px 5px;
+      h1 {
+        margin: 1.6rem 0;
+        text-align: center;
+        font-size: 2.4rem;
+        color: black;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        .form-control {
+          padding: 0 1rem 2rem 1rem;
+          position: relative;
+          input {
+            font-size: 1.2rem;
+            padding: 0.7rem 1rem;
+            margin-bottom: 0.4rem;
+            border-radius: 1rem;
+            width: 100%;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            &:focus {
+              background-color: rgb(176, 176, 241);
+            }
+            &:focus ~ span {
+              outline: red;
+              &:before {
+                width: 88%;
+              }
+            }
+            &:focus ~ span.active {
+              &::before {
+                background: rgb(52, 70, 51);
+              }
+            }
+            &:focus ~ small {
+              opacity: 0;
+            }
+          }
+
+          span {
+            &:before {
+              content: "";
+              position: absolute;
+              top: 44px;
+              width: 0;
+              height: 3px;
+              left: 2rem;
+              right: 0;
+              background: rgb(52, 70, 51);
+              transition: 0.5s;
+            }
+          }
+
+          span.active {
+            &:before {
+              background: red;
+              width: 88%;
+            }
+          }
+
+          small {
+            color: red;
+            font-size: 0.8rem;
+            padding-left: 1rem;
+          }
+        }
+
+        button {
+          background-color: #ccc;
+          color: black;
+          font-size: 1.2rem;
+          font-weight: 700;
+          padding: 8px 16px;
+          border-radius: 12px;
+          margin: 0 auto;
+          border: none;
+          outline: none;
+          box-shadow: -1px 2px 5px rgb(46, 7, 153);
+          transition: 0.5s linear;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(46, 7, 153);
+            color: white;
+            box-shadow: none;
+          }
+        }
+
+        .signup-link {
+          // align-self: center;
+          margin: 2rem auto;
+          height: 30px;
+          a {
+            position: relative;
+            // color: black;
+            color: black;
+            font-size: 1.2rem;
+            animation: move 3s infinite;
+            // align-items: center;
+            border-radius: 12px;
+            padding: 4px 8px;
+            &:hover {
+              color: white;
+            }
+            @keyframes move {
+              0% {
+                background-color: orange;
+              }
+              25% {
+                background-color: rgb(0, 255, 4);
+              }
+              50% {
+                background-color: blue;
+              }
+              75% {
+                background-color: blueviolet;
+              }
+              100% {
+                background-color: red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

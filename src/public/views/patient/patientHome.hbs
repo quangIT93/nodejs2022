@@ -1,0 +1,146 @@
+<div class="user">
+  <div class="user-detail">
+    <h1>Thông tin người dùng</h1>
+    <ul class="info">
+      <div>
+        <img
+          src="{{user.image}}"
+          alt=""
+          onerror="this.src='https://thumbs.dreamstime.com/z/no-image-available-icon-photo-camera-flat-vector-illustration-132483296.jpg';"
+        />
+      </div>
+      <li>
+        <span>name:</span>
+        {{user.name}}
+        {{#if user.admin}}
+          <a href="/admin/managerUser?id={{user._id}}" class="adminPage">Admin</a>
+        {{/if}}
+      </li>
+      <li>
+        <span>email:</span>
+        {{user.email}}
+      </li>
+      <li>
+        <span>address:</span>
+        {{user.address}}
+      </li>
+      <li>
+        <span>sex: </span>
+        {{user.sex}}
+      </li>
+      <li>
+        <span>money:</span>
+        {{user.money}}
+      </li>
+    </ul>
+    <div class="btnEdit">
+      {{! Sửa }}
+      <span>Edit</span>
+    </div>
+    <div class="editInfo">
+      <div class="editBox">
+        <div class="closeEdit">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h1>Chỉnh sửa thông tin cá nhân</h1>
+        <div class="editItem">
+          <form action="/user/{{user._id}}/edit" method="POST">
+            <div class="form-group">
+              <label for="intName">Name:</label>
+              <input type="text" id="intName" class="intName" name="name" />
+            </div>
+            <div class="form-group">
+              <label for="intEmail">Image:</label>
+              <input type="text" id="intImage" class="intImage" name="image" />
+            </div>
+            <div class="form-group">
+              <label for="intAddress">Address:</label>
+              <input
+                type="text"
+                id="intAddress"
+                class="intAddress"
+                name="address"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inJob">Job:</label>
+              <input type="text" id="inJob" class="inJob" name="job" />
+            </div>
+            <div class="form-group">
+              <label for="radioSex">Sex</label>
+              <div>
+                <label for="male">Nữ</label>
+                <input type="radio" id="female" name="sex" value="female" />
+                <label for="male">Nam</label>
+                <input type="radio" id="male" name="sex" value="male" checked />
+              </div>
+            </div>
+            <div class="btnEdit">
+              <button type="submit" class="accept">Sửa</button>
+              <button type="button" class="cancle">Huỷ</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="user-content">
+    <h1>Thông tin khoá học của bạn</h1>
+    <div class="pagination">
+      <div class="left">
+        <i class="fa-solid fa-angle-left"></i>
+      </div>
+      <div class="right">
+        <i class="fa-solid fa-angle-right"></i>
+      </div>
+    </div>
+    <div class="listCourse">
+      {{#each courses}}
+      <div class="course">
+        <div class="course-detail">
+          <h2>{{this.courseName}}</h2>
+          <img src="{{this.image}}" alt="" />
+          <p>
+            <span>Số lượng video:</span>
+            {{this.numberVideo}}
+          </p>
+          <p>
+            <span>Giảng viên: </span>
+            {{this.lecturer}}
+          </p>
+          <p>
+            <span>Chi tiết:</span>
+            {{this.detail}}
+          </p>
+          <div class="learn">
+            <a href="#">Learn</a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<script>
+  const edit = document.querySelector(".editInfo .editBox");
+  const btnEdit = document.querySelector(".btnEdit");
+  const btncancleEdit = document.querySelector(".btnEdit .cancle");
+  const Check = document.querySelector(".editInfo");
+  edit.addEventListener("click", function (e) {
+    console.log(e.target.closest(".closeEdit"));
+    if (e.target.closest(".closeEdit")) {
+      Check.style.display = "none";
+      console.log(Check);
+    }
+    if (e.target.closest(".btnEdit .cancle")) {
+      Check.style.display = "none";
+      console.log(Check);
+    }
+  });
+  btnEdit.addEventListener("click", function (e) {
+    console.log(e.target.closest(".btnEdit"));
+    Check.style.display = "block";
+  });
+  console.log(edit);
+</script>

@@ -1,0 +1,73 @@
+#khởi chạy 1 mô hình MVC
+
+#tạo trang đăng ký
+
+#thực hiện chức năng đăng ký
+
+#tạo trang đăng nhập
+
+#thực hiện chức năng đăng nhập
+
+#đặt chế độ nghiêm nhặt cho models
+
+#tạo token
+
+#đưa lên cookies
+
+#hoàn thiện database thông tin user
+#=> gồm 
+#tên
+#admin: true
+#địa chỉ
+#giới tính
+#số tiền hiện có trong web => sẽ thêm trang mua bán nếu có thời gian
+
+#chưa tạo trang user
+    #=> cho các key của user với value = '' chờ khi thay đổi thông tin người dùng sẽ cập nhật
+#chưa tạo trang infoUser
+
+#tao phân trang
+    => thực hiện hành vi phân trang
+
+#thực hiện chức năng sửa thông tin người dùng
+    #=> tai img
+
+#------------------------------------
+
+#tạo modle các khoá học
+    #=> liên kết nó với user
+        => từc khoá học có idUser: [] chứa các id của các user nào đã mua khoá học
+        => search nếu có trong mảng của idUser thì render item nó ra infoUser
+
+#=====================================
+
+#tạo trang đăng nhập admin
+
+#tạo trang quản lý tất cả các user
+
+thực hiện chức năng thêm sửa xoá user bất kỳ
+
+#=================================
+
+tạo trang thông tin khoá học 
+
+#tạo thêm 1 models về các khoá học lập trình
+    #=> gồm 
+#tên khoá học
+#giá
+#img
+độ khó
+
+#liên kết 2 models lại với id của modle user
+    =>     
+
+responsive 
+
+tổng hợp kiến thức
+
+
+
+
+
+
+
