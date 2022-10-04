@@ -62,7 +62,7 @@ app.engine(
 );
 app.set("view engine", ".hbs");
 app.set("views", path.join(__dirname, "public/views/"));
-const PORT = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
 connectDB.connect();
 route(app);
