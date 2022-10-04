@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --inspect src/index.js",
+    "build": "./node_modules/.bin/netlify-lambda build src",
+    "start": "./node_modules/.bin/netlify-lambda server src",
     "watch": "node-sass --watch src/public/scss/style.scss src/public/css/style.css"
   },
   "author": "",
@@ -22,6 +23,7 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.6.2",
     "morgan": "^1.10.0",
+    "netlify-lambda": "^2.0.15",
     "node-sass": "^7.0.3",
     "path": "^0.12.7"
   },
