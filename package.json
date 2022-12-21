@@ -9,8 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "watch": "node-sass --watch src/public/scss/style.scss src/public/css/style.css",
-    "build": "echo 'Build... (not actually doing something, but usually I would)'"
+    "watch": "node-sass --watch src/public/scss/style.scss src/public/css/style.css"
   },
   "author": "",
   "license": "ISC",
