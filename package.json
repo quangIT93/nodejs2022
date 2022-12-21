@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "type": "module",
   "engines": {
     "node": "14.x"
   },
@@ -28,7 +29,6 @@
     "netlify-lambda": "^2.0.15",
     "node-sass": "^7.0.3",
     "nodemon": "^2.0.20",
-    "now": "^21.0.1",
     "path": "^0.12.7"
   }
 }
